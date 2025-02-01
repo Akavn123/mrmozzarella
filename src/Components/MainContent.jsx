@@ -1,34 +1,36 @@
-import React from 'react'
-import mozzarella from '../../public/MenuQRFrontPage.jpg'
+import React from 'react';
+import mozzarella from '../assets/Menu QR Front Page.jpg';
 
 const MainContent = () => {
-  const pdfUrl = '../../public/MenuForQR.pdf';
-
-  // Handler to open the PDF in a new window
-  const viewPdf = () => {
-      window.open(pdfUrl, '_blank');
-  };
-
-  // Handler to trigger PDF download
-  const downloadPdf = () => {
-      const link = document.createElement('a');
-      link.href = pdfUrl;
-      link.download = 'MenuForQR.pdf'; // The file name when downloading
-      link.click();
-  };
-
+  const pdfUrl = '/MenuForQR.pdf'
   return (
     <div className='h-auto w-full flex flex-col justify-center items-center gap-4 p-2 rounded-xl'>
-        <div className='h-auto w-full xl:w-[78%] lg:w-[90%] 2xl:w-[84%] flex justify-center items-center bg-white p-1 rounded-md'>
-        <img src={mozzarella} alt="" className=' shadow-lg xl:w-[100%]' />
-        </div>
-        
-        <div className='w-full h-auto flex justify-center items-center gap-4'>
-            <button onClick={viewPdf} className='bg-white py-2 md:py-3 lg:py-4 xl:py-2 2xl:py-3 px-6 md:px-8 font-poppins md:text-lg lg:text-xl xl:text-base font-semibold text-rose-600 shadow-xl'>View Pdf</button>
-            <button onClick={downloadPdf} className='bg-white py-2 md:py-3 lg:py-4 xl:py-2 2xl:py-3 px-6 md:px-8 font-poppins md:text-lg lg:text-xl xl:text-base font-semibold text-rose-600 shadow-xl'>Download Pdf</button>
-        </div>
+      <div className='h-auto w-full xl:w-[78%] lg:w-[90%] 2xl:w-[84%] flex justify-center items-center bg-white p-1 rounded-md'>
+        <img src={mozzarella} alt="Menu Preview" className='shadow-lg xl:w-[100%]' />
+      </div>
+
+      <div className='w-full h-auto flex justify-center items-center gap-4'>
+        {/* View PDF */}
+        <a 
+          href={pdfUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className='bg-white py-2 md:py-3 lg:py-4 xl:py-2 2xl:py-3 px-6 md:px-8 font-poppins md:text-lg lg:text-xl xl:text-base font-semibold text-rose-600 shadow-xl'
+        >
+          View Pdf
+        </a>
+
+        {/* Download PDF */}
+        <a 
+          href={pdfUrl} 
+          download="Menu For QR.pdf"
+          className='bg-white py-2 md:py-3 lg:py-4 xl:py-2 2xl:py-3 px-6 md:px-8 font-poppins md:text-lg lg:text-xl xl:text-base font-semibold text-rose-600 shadow-xl'
+        >
+          Download Pdf
+        </a>
+      </div>
     </div>
-  )
+  );
 }
 
-export default MainContent
+export default MainContent;
