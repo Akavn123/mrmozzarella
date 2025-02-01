@@ -1,5 +1,5 @@
 import React from 'react';
-import mozzarella from '../assets/Menu QR Front Page.jpg';
+import mozzarella from '/MenuQRFrontPage.jpg';
 
 const MainContent = () => {
   const pdfUrl = '/MenuForQR.pdf'
