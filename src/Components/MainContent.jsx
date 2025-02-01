@@ -2,7 +2,7 @@ import React from 'react';
 import mozzarella from '/MenuQRFrontPage.jpg';
 
 const MainContent = () => {
-  const pdfUrl = '/MenuForQR.pdf'
+  const pdfUrl = '/mrmozzarella/MenuForQR.pdf'
   return (
     <div className='h-auto w-full flex flex-col justify-center items-center gap-4 p-2 rounded-xl'>
       <div className='h-auto w-full xl:w-[78%] lg:w-[90%] 2xl:w-[84%] flex justify-center items-center bg-white p-1 rounded-md'>
