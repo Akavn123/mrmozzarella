@@ -1,7 +1,22 @@
 import React from 'react'
-import mozzarella from '../../public/Menu QR Front Page.jpg'
+import mozzarella from 'https://akavn123.github.io/mrmozzarella/public/MenuQRFrontPage.jpg'
 
 const MainContent = () => {
+  const pdfUrl = 'https://akavn123.github.io/mrmozzarella/public/MenuForQR.pdf';
+
+  // Handler to open the PDF in a new window
+  const viewPdf = () => {
+      window.open(pdfUrl, '_blank');
+  };
+
+  // Handler to trigger PDF download
+  const downloadPdf = () => {
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'Menu For QR.pdf'; // The file name when downloading
+      link.click();
+  };
+
   return (
     <div className='h-auto w-full flex flex-col justify-center items-center gap-4 p-2 rounded-xl'>
         <div className='h-auto w-full xl:w-[78%] lg:w-[90%] 2xl:w-[84%] flex justify-center items-center bg-white p-1 rounded-md'>
@@ -9,8 +24,8 @@ const MainContent = () => {
         </div>
         
         <div className='w-full h-auto flex justify-center items-center gap-4'>
-            <button className='bg-white py-2 md:py-3 lg:py-4 xl:py-2 2xl:py-3 px-6 md:px-8 font-poppins md:text-lg lg:text-xl xl:text-base font-semibold text-rose-600 shadow-xl'>View Pdf</button>
-            <button className='bg-white py-2 md:py-3 lg:py-4 xl:py-2 2xl:py-3 px-6 md:px-8 font-poppins md:text-lg lg:text-xl xl:text-base font-semibold text-rose-600 shadow-xl'>Download Pdf</button>
+            <button onClick={viewPdf} className='bg-white py-2 md:py-3 lg:py-4 xl:py-2 2xl:py-3 px-6 md:px-8 font-poppins md:text-lg lg:text-xl xl:text-base font-semibold text-rose-600 shadow-xl'>View Pdf</button>
+            <button onClick={downloadPdf} className='bg-white py-2 md:py-3 lg:py-4 xl:py-2 2xl:py-3 px-6 md:px-8 font-poppins md:text-lg lg:text-xl xl:text-base font-semibold text-rose-600 shadow-xl'>Download Pdf</button>
         </div>
     </div>
   )
