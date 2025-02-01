@@ -1,8 +1,8 @@
 import React from 'react'
-import mozzarella from 'https://akavn123.github.io/mrmozzarella/public/MenuQRFrontPage.jpg'
+import mozzarella from '../../public/MenuQRFrontPage.jpg'
 
 const MainContent = () => {
-  const pdfUrl = 'https://akavn123.github.io/mrmozzarella/public/MenuForQR.pdf';
+  const pdfUrl = '../../public/MenuForQR.pdf';
 
   // Handler to open the PDF in a new window
   const viewPdf = () => {
@@ -13,7 +13,7 @@ const MainContent = () => {
   const downloadPdf = () => {
       const link = document.createElement('a');
       link.href = pdfUrl;
-      link.download = 'Menu For QR.pdf'; // The file name when downloading
+      link.download = 'MenuForQR.pdf'; // The file name when downloading
       link.click();
   };
 
