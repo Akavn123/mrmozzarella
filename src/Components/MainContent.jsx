@@ -1,5 +1,5 @@
 import React from 'react'
-import mozzarella from '../assets/Menu QR Front Page.jpg'
+import mozzarella from '../../public/Menu QR Front Page.jpg'
 
 const MainContent = () => {
   return (
